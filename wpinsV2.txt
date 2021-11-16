@@ -1,2 +1,4 @@
-print("Update, Waiting For Informations")
-input("Enter to Exit...")
+print("hayo mw ngapain")
+input("Bilang dlu gw ganteng ye?")
+input("Gw Ganteng gk?")
+input("Hmmm? = ")
