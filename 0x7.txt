@@ -1,0 +1,500 @@
+try:
+    from colorama.ansi import clear_screen
+    from setting import api
+    import os
+    import os.path
+    import platform
+    import urllib
+    import urllib.request
+    from sys import argv
+    import time
+    import re
+    import datetime
+    import json
+    import os
+    import requests
+    import cookies
+    import socket
+    import re
+    from distutils.core import setup
+    from colorama import Fore, init
+    import colorsys
+    from multiprocessing import Pool
+    from multiprocessing.dummy import Pool as ThreadPool
+    from re import findall as reg
+    from pyfiglet import Figlet
+    import random
+    from bs4 import BeautifulSoup
+    import tldextract
+    from colorama import Fore, Back, Style
+    from urllib.parse import urlparse
+except ImportError:
+    import os
+    import time
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print('Downloading Requirement')
+    print('Check Setting')
+    print('Check API Server')
+    time.sleep(6)
+    os.system('python -m pip install tldextract')
+    os.system('python -m pip install BeautifulSoup4')
+    os.system('python -m pip install pycryptodome')
+    os.system('python -m pip install requests_toolbelt')
+    os.system('python -m pip install colorama')
+    os.system('python -m pip install pyfiglet')
+    os.system('python -m pip install cookies')
+    from colorama.ansi import clear_screen
+    from setting import api
+    import os
+    import os.path
+    import platform
+    import urllib
+    import urllib.request
+    from sys import argv
+    import re
+    import datetime
+    import json
+    import os
+    import requests
+    import cookies
+    import socket
+    import re
+    from distutils.core import setup
+    from colorama import Fore, init
+    import colorsys
+    from multiprocessing import Pool
+    from multiprocessing.dummy import Pool as ThreadPool
+    from re import findall as reg
+    from pyfiglet import Figlet
+    import random
+    from bs4 import BeautifulSoup
+    import tldextract
+    from colorama import Fore, Back, Style
+    from urllib.parse import urlparse
+
+
+res = []
+resi = []
+os.system('cls' if os.name == 'nt' else 'clear')
+tmip = []
+keyauthapp = api("Revip", "382BehmRFK",
+                 "bfa627a2da373ec7526baf1a6664fe8e6284eca0f4bc9e9b6f3022b244bafb48", "1.0")
+
+keyauthapp.init()
+print('\n')
+print('Please Login Your Account PT. Bot Jaya Abadi')
+print('Dont Have Account? Dm me Auhtor on the telegram : @Karma_Reall\n')
+toolsus = input('Username: \033[31;1m'+Fore.CYAN)
+tooolspw = input(Fore.WHITE+'Password: \033[31;1m'+Fore.CYAN)
+keyauthapp.login(toolsus, tooolspw)
+
+
+def main():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print("""
+
+\033[33;1m
+  @@@@@@  @@@  @@@ @@@@@@@@ @@@@@@@  @@@@@@   @@@@@@  @@@       @@@@@@
+ @@!  @@@ @@!  !@@      @@!   @@!   @@!  @@@ @@!  @@@ @@!      !@@    
+ @!@  !@!  !@@!@!      @!!    @!!   @!@  !@! @!@  !@! @!!       !@@!! 
+ !!:  !!!  !: :!!   .!!:      !!:   !!:  !!! !!:  !!! !!:          !:!
+  : : ::  :::  ::: : :         :     : :. :   : :. :  : ::.: : ::.: :  Author: @Karma_Reall
+
+
+\033[36;1m Welcome to the 0x7 Tools ^_^ 
+\033[32;1m Verified user """+toolsus+"""
+
+\033[37;1m Menu on 1 - 5 =
+\033[37;1m[\033[31;1m-\033[37;1m] ~1.Rev Ip Auto Check Laravel with Cookies                        
+\033[37;1m[\033[31;1m-\033[37;1m] ~2.Rev Ip Auto Check CMS WordPress
+\033[37;1m[\033[31;1m-\033[37;1m] ~3.Rev Ip Auto Check Laravel with Env               
+\033[37;1m[\033[31;1m-\033[37;1m] ~4.Grabber By Date                               
+\033[37;1m[\033[31;1m-\033[37;1m] ~5.Grabber By Country And Domain
+\033[37;1m[\033[31;1m-\033[37;1m] ~0.Check Update      
+
+NB : Grabber is still in development/Beta stage
+    """)
+    print("\033[36;1mWelcome to the 0x7 Tools, User \033[32;1m"""+toolsus+"")
+    select = input("\033[37;1m#\033[0;31mInput Menu\033[37;1m~$ ")
+    if select == "1":
+        if os.path.exists("Result"):
+            pass
+        else:
+            os.mkdir("./Result")
+
+        def banner():
+            os.system(["clear", "cls"][os.name == 'nt'])
+            print("""\033[33;1m
+
+
+ ######                   #                                                 
+ #     # ###### #    #    #         ##   #####    ##   #    # ###### #      
+ #     # #      #    #    #        #  #  #    #  #  #  #    # #      #      
+ ######  #####  #    #    #       #    # #    # #    # #    # #####  #      
+ #   #   #      #    #    #       ###### #####  ###### #    # #      #      
+ #    #  #       #  #     #       #    # #   #  #    #  #  #  #      #      
+ #     # ######   ##      ####### #    # #    # #    #   ##   ###### ###### 
+                                                                        
+
+
+\033[37;1m[\033[36;1m~\033[37;1m]Priv8 Reverse Ip Check Laravel With Cookies
+
+        """''.format(Fore.YELLOW))
+
+        banner()
+
+        def repip(url):
+            global tmip
+            global res
+            try:
+                url = url.replace("/", "").replace("https",
+                                                   "").replace("http", "").replace(":", "")
+
+                ip = socket.gethostbyname(url)
+            except:
+                print(Fore.WHITE+url +
+                      '\033[32;1m => \033[33mReversing \033[32;1m => '+Fore.RED + 'WEB DIE'+Fore.WHITE)
+                return 0
+            headers = {
+                'User-agent': 'Mozilla/5.0 (Windows; Intel 10.13; rv:52.0) Gecko/20100101 Firefox/52.0'}
+            url = url.replace("/", "").replace("https",
+                                               "").replace("http", "").replace(":", "")
+            if ip in tmip:
+                print(
+                    '\033[37;1m' + url + '\033[32;1m => \033[33mReversing \033[32;1m => '+Fore.RED+'SAME IP'+Fore.WHITE)
+            else:
+                tmip.append(ip)
+                grab = requests.get(
+                    'https://repesip.herokuapp.com/?ip='+ip, headers=headers)
+                if grab.status_code == 200:
+                    grab2 = grab.text
+                    hasil = grab2.splitlines()
+                    for seline in hasil:
+                        domain = tldextract.extract(seline)
+                        revi = domain.domain + \
+                            "." + domain.suffix
+                        if revi not in res:
+                            res.append(revi)
+                            open('./Result/ReverseRandomCMS.txt',
+                                 'a').write(revi + "\n")
+                        else:
+                            pass
+
+                else:
+                    print(Fore.WHITE+url +
+                          '\033[32;1m => \033[33mReversing \033[32;1m => '+Fore.RED+"BAD IP"+Fore.WHITE)
+
+                print('\033[37;1m' + ip + ' ' +
+                      '\033[32;1m => \033[33mReversing \033[32;1m => \033[32;1m', len(res))
+
+                if (scankah == "Y" or scankah.lower() == "y"):
+                    scanPool = ThreadPool(scanthread)
+                    scanPool.map(checkCms, res)
+                    scanPool.close()
+                    scanPool.join()
+                elif (scankah == "n" or scankah == "N"):
+                    pass
+                else:
+                    pass
+
+        def checkCms(site):
+            global resi
+            if not site.startswith("http://"):
+                site = "http://" + site
+            try:
+                scan = requests.get(
+                    site, timeout=20, verify=False, allow_redirects=False)
+            except:
+                return 0
+            if 'laravel_session' in scan.cookies:
+                if site not in resi:
+                    resi.append(site)
+                    open('./Result/LaravelCookies.txt', 'a').write(site + "\n")
+                    print(Fore.WHITE +
+                          site + '\033[32;1m => \033[35mValid \033[32;1m => \033[32;1m' + "Laravel Cookies" + '\033[32;1m')
+
+        # options
+        try:
+            urlpath = input(
+                Fore.WHITE+'List : ')
+            if os.path.exists(urlpath):
+                url = open(urlpath, "r").read().splitlines()
+            else:
+                print("\033[31;1mError \033[37;1mList Not Found")
+                exit()
+            thread = int(input(
+                Fore.WHITE+'Thread Reverse : '))
+            scankah = input(
+                Fore.WHITE+'(Y/N) Auto Check CMS?: ')
+            if (scankah == "Y" or scankah.lower() == "y"):
+                scanthread = int(input(
+                    Fore.WHITE+'Thread Scan Cms (50 Thread Recomended) : '))
+
+            print("\n")
+            mainPool = ThreadPool(thread)
+            mainPool.map(repip, url)
+            mainPool.close()
+            mainPool.join()
+            print('\n\033[32;1mSaved All Result \033[37;1min Folder Result')
+        except:
+            pass
+    elif select == "2":
+        if os.path.exists("Result"):
+            pass
+        else:
+            os.mkdir("./Result")
+
+        def banner():
+            os.system(["clear", "cls"][os.name == 'nt'])
+            print("""\033[33;1m
+
+ ######                   #     # #     # #       ######  ######   #####  
+ #     # ###### #    #     #   #  ##   ## #       #     # #     # #     # 
+ #     # #      #    #      # #   # # # # #       #     # #     # #       
+ ######  #####  #    #       #    #  #  # #       ######  ######  #       
+ #   #   #      #    #      # #   #     # #       #   #   #       #       
+ #    #  #       #  #      #   #  #     # #       #    #  #       #     # 
+ #     # ######   ##      #     # #     # ####### #     # #        #####  
+                                                                          
+                                                                            
+
+\033[37;1m[\033[36;1m~\033[37;1m]Priv8 Reverse Ip Check Cms WordPress
+
+        """''.format(Fore.YELLOW))
+
+        banner()
+
+        def repip(url):
+            global tmip
+            global res
+            try:
+                url = url.replace("/", "").replace("https",
+                                                   "").replace("http", "").replace(":", "")
+
+                ip = socket.gethostbyname(url)
+            except:
+                print(Fore.WHITE+url +
+                      '\033[32;1m => \033[33mReversing \033[32;1m => '+Fore.RED + 'WEB DIE'+Fore.WHITE)
+                return 0
+            headers = {
+                'User-agent': 'Mozilla/5.0 (Windows; Intel 10.13; rv:52.0) Gecko/20100101 Firefox/52.0'}
+            url = url.replace("/", "").replace("https",
+                                               "").replace("http", "").replace(":", "")
+            if ip in tmip:
+                print(
+                    '\033[37;1m' + url + '\033[32;1m => \033[33mReversing \033[32;1m => '+Fore.RED+'SAME IP'+Fore.WHITE)
+            else:
+                tmip.append(ip)
+                grab = requests.get(
+                    'https://repesip.herokuapp.com/?ip='+ip, headers=headers)
+                if grab.status_code == 200:
+                    grab2 = grab.text
+                    hasil = grab2.splitlines()
+                    for seline in hasil:
+                        domain = tldextract.extract(seline)
+                        revi = domain.domain + \
+                            "." + domain.suffix
+                        if revi not in res:
+                            res.append(revi)
+                            open('./Result/ReverseRandomCMS.txt',
+                                 'a').write(revi + "\n")
+                        else:
+                            pass
+                else:
+                    print(Fore.WHITE+url +
+                          '\033[32;1m => \033[33mReversing \033[32;1m => '+Fore.RED+"BAD IP"+Fore.WHITE)
+
+                print('\033[37;1m' + ip + ' ' +
+                      '\033[32;1m => \033[33mReversing \033[32;1m => \033[32;1m', len(res))
+
+                if (scankah == "Y" or scankah.lower() == "y"):
+                    scanPool = ThreadPool(scanthread)
+                    scanPool.map(checkCms, res)
+                    scanPool.close()
+                    scanPool.join()
+                elif (scankah == "n" or scankah == "N"):
+                    pass
+                else:
+                    pass
+
+        def checkCms(site):
+            global resi
+            if not site.startswith("http://"):
+                site = "http://" + site
+            try:
+                scan = requests.get(
+                    site, timeout=20, verify=False, allow_redirects=False)
+                scan2 = scan.text
+            except:
+                return 0
+            if "xmlrpc.php" in scan2:
+                if site not in resi:
+                    resi.append(site)
+                    open('./Result/WordPress.txt', 'a').write(site + "\n")
+                    print(Fore.WHITE + site +
+                          '\033[32;1m => \033[35mValid \033[32;1m => \033[32;1m' + "WordPress" + '\033[32;1m')
+
+        # options
+        try:
+            urlpath = input(
+                Fore.WHITE+'List : ')
+            if os.path.exists(urlpath):
+                url = open(urlpath, "r").read().splitlines()
+            else:
+                print("\033[31;1mError \033[37;1mList Not Found")
+                exit()
+            thread = int(input(
+                Fore.WHITE+'Thread Reverse : '))
+            scankah = input(
+                Fore.WHITE+'(Y/N) Auto Check CMS?: ')
+            if (scankah == "Y" or scankah.lower() == "y"):
+                scanthread = int(input(
+                    Fore.WHITE+'Thread Scan Cms (50 Thread Recomended) : '))
+
+            print("\n")
+            mainPool = ThreadPool(thread)
+            mainPool.map(repip, url)
+            mainPool.close()
+            mainPool.join()
+            print('\n\033[32;1mSaved All Result \033[37;1min Folder Result')
+        except:
+            pass
+    elif select == "3":
+        if os.path.exists("Result"):
+            pass
+        else:
+            os.mkdir("./Result")
+
+        def banner():
+            os.system(["clear", "cls"][os.name == 'nt'])
+            print("""\033[33;1m
+
+ ######                   #                                                 
+ #     # ###### #    #    #         ##   #####    ##   #    # ###### #      
+ #     # #      #    #    #        #  #  #    #  #  #  #    # #      #      
+ ######  #####  #    #    #       #    # #    # #    # #    # #####  #      
+ #   #   #      #    #    #       ###### #####  ###### #    # #      #      
+ #    #  #       #  #     #       #    # #   #  #    #  #  #  #      #      
+ #     # ######   ##      ####### #    # #    # #    #   ##   ###### ###### 
+                                                                            
+
+\033[37;1m[\033[36;1m~\033[37;1m]Priv8 Reverse Ip Check Laravel With Env
+
+        """''.format(Fore.YELLOW))
+
+        banner()
+
+        def repip(url):
+            global tmip
+            global res
+            try:
+                url = url.replace("/", "").replace("https",
+                                                   "").replace("http", "").replace(":", "")
+
+                ip = socket.gethostbyname(url)
+            except:
+                print(Fore.WHITE+url +
+                      '\033[32;1m => \033[33mReversing \033[32;1m => '+Fore.RED + 'WEB DIE'+Fore.WHITE)
+                return 0
+            headers = {
+                'User-agent': 'Mozilla/5.0 (Windows; Intel 10.13; rv:52.0) Gecko/20100101 Firefox/52.0'}
+            url = url.replace("/", "").replace("https",
+                                               "").replace("http", "").replace(":", "")
+            if ip in tmip:
+                print(
+                    '\033[37;1m' + url + '\033[32;1m => \033[33mReversing \033[32;1m => '+Fore.RED+'SAME IP'+Fore.WHITE)
+            else:
+                tmip.append(ip)
+                grab = requests.get(
+                    'https://repesip.herokuapp.com/?ip='+ip, headers=headers)
+                if grab.status_code == 200:
+                    grab2 = grab.text
+                    hasil = grab2.splitlines()
+                    for seline in hasil:
+                        domain = tldextract.extract(seline)
+                        revi = domain.domain + \
+                            "." + domain.suffix
+                        if revi not in res:
+                            res.append(revi)
+                            open('./Result/ReverseRandomCMS.txt',
+                                 'a').write(revi + "\n")
+                        else:
+                            pass
+                else:
+                    print(Fore.WHITE+url +
+                          '\033[32;1m => \033[33mReversing \033[32;1m => '+Fore.RED+"BAD IP"+Fore.WHITE)
+
+                print('\033[37;1m' + ip + ' ' +
+                      '\033[32;1m => \033[33mReversing \033[32;1m => \033[32;1m', len(res))
+
+                if (scankah == "Y" or scankah.lower() == "y"):
+                    scanPool = ThreadPool(scanthread)
+                    scanPool.map(checkCms, res)
+                    scanPool.close()
+                    scanPool.join()
+                elif (scankah == "n" or scankah == "N"):
+                    pass
+                else:
+                    pass
+
+        def checkCms(site):
+            global resi
+            if not site.startswith("http://"):
+                site = "http://" + site
+            try:
+                scan = requests.get(
+                    site, timeout=20, verify=False, allow_redirects=False)
+                scan2 = scan.text
+            except:
+                return 0
+            if ".env" in scan2:
+                if site not in resi:
+                    resi.append(site)
+                    open('./Result/LaravelEnv.txt', 'a').write(site + "\n")
+                    print(Fore.WHITE + site +
+                          '\033[32;1m => \033[35mValid \033[32;1m => \033[32;1m' + "Laravel Env" + '\033[32;1m')
+
+        # options
+        try:
+            urlpath = input(
+                Fore.WHITE+'List : ')
+            if os.path.exists(urlpath):
+                url = open(urlpath, "r").read().splitlines()
+            else:
+                print("\033[31;1mError \033[37;1mList Not Found")
+                exit()
+            thread = int(input(
+                Fore.WHITE+'Thread Reverse : '))
+            scankah = input(
+                Fore.WHITE+'(Y/N) Auto Check CMS?: ')
+            if (scankah == "Y" or scankah.lower() == "y"):
+                scanthread = int(input(
+                    Fore.WHITE+'Thread Scan Cms (50 Thread Recomended) : '))
+
+            print("\n")
+            mainPool = ThreadPool(thread)
+            mainPool.map(repip, url)
+            mainPool.close()
+            mainPool.join()
+            print('\n\033[32;1mSaved All Result \033[37;1min Folder Result')
+        except:
+            pass
+    elif select == "4":
+        print("Coming Soon!!")
+    elif select == "5":
+        print("Coming Soon!!")
+    else:
+        print("Run Ulang!")
+        print("It's Wrong Lol!")
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        print('\n Thanks For Using PT. Bot Jaya Abadi Tools')
+        try:
+            import sys
+            sys.exit(0)
+        except SystemExit:
+            os._exit(0)
